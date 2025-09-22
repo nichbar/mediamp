@@ -13,9 +13,5 @@ import androidx.compose.runtime.remember
 import org.openani.mediamp.MediampPlayer
 import kotlin.coroutines.CoroutineContext
 
-@Composable
-actual fun rememberMediampPlayer(parentCoroutineContext: () -> CoroutineContext): MediampPlayer {
-    return remember {
-        RememberedMediampPlayer(MediampPlayer(Unit, parentCoroutineContext()))
-    }.player
-}
+// Note: Actual implementation is provided by mediamp-api for skikoMain
+// This file is kept for potential future enhancements
