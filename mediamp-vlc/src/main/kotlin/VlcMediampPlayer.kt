@@ -96,7 +96,12 @@ public class VlcMediampPlayer(parentCoroutineContext: CoroutineContext) :
 //    )
 
     public val player: EmbeddedMediaPlayer = createPlayerLock.withLock {
-        MediaPlayerFactory("-v")
+        MediaPlayerFactory(
+            "-v",
+//            "--verbose=2",
+            "--no-video",
+            // Set the network cache to 10 seconds
+            "--network-caching=10000")
             .mediaPlayers()
             .newEmbeddedMediaPlayer()
     }
